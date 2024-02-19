@@ -1,4 +1,3 @@
-import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import ReactDOM from "react-dom/client";
@@ -11,6 +10,7 @@ import { NoteBrowse } from "pages/NoteBrowse/NoteBrowse";
 import { Note } from "pages/Note/Note";
 import { NoteCreate } from "pages/NoteCreate/NoteCreate";
 import { PageNotFound } from "pages/PageNotFound/PageNotFound";
+import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

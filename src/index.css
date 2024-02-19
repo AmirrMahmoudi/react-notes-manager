@@ -1,4 +1,8 @@
-body{
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
   font-family: Roboto;
-  background-color: #F8F9FB;
+  background-color: #f8f9fb;
 }
