@@ -1,3 +1,9 @@
+import { NoteForm } from "components/NoteForm/NoteForm";
+
 export const NoteCreate = (props) => {
-  return <>NoteCreate</>;
+  return (
+    <>
+      <NoteForm title="New note" />
+    </>
+  );
 };
