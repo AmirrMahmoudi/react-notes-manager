@@ -7,16 +7,16 @@ export const NoteList = (props) => {
   const noteList = useSelector((store) => store.notesSlice.noteList);
   const navigae = useNavigate();
   return (
-    <div className={`row justify-content-center`}>
+    <div className="row justify-content-center">
       {noteList.map((note) => {
         return (
           <div className={s.card_container}>
             <TextCard
               title={note.title}
+              subtitle={note.created_at}
               content={note.content}
-              subtitle={note.createed_at}
-              onClick={() => navigae("/note/" + note.id)}
               onClickTrash={() => alert("onClickTrash")}
+              onClick={() => navigae("/note/" + note.id)}
             />
           </div>
         );

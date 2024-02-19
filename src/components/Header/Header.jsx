@@ -18,7 +18,7 @@ export const Header = (props) => {
         />
       </div>
       <div className="col-xs-12 col-sm-8 text-end">
-        <ButtonPrimary onClick={() => navigate("/note")}>
+        <ButtonPrimary onClick={() => navigate("/note/new")}>
           Add note +
         </ButtonPrimary>
       </div>
