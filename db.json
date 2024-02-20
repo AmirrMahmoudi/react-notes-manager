@@ -1,3 +1,16 @@
 {
-  "notes": []
+  "notes": [
+    {
+      "id": "59e7",
+      "title": "adfasd",
+      "content": "fsadfsadf",
+      "created_at": "2/20/2024"
+    },
+    {
+      "id": "4b10",
+      "title": "Hook",
+      "content": "amir",
+      "created_at": "2/20/2024"
+    }
+  ]
 }

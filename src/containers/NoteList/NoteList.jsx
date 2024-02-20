@@ -5,8 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { deleteNote } from "store/notes/notes-slice";
 
 import s from "./style.module.css";
-export const NoteList = (props) => {
-  const noteList = useSelector((store) => store.notesSlice.noteList);
+export const NoteList = ({ noteList }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
