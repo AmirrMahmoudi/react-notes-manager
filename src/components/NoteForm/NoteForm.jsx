@@ -18,16 +18,18 @@ const VALIDATOR = {
 export const NoteForm = ({
   isEditable = true,
   note,
-
   title,
   onClickEdit,
   onClickDelete,
   onSubmit,
 }) => {
-  const [formValues, setFormValues] = useState({ title: "", content: "" });
+  const [formValues, setFormValues] = useState({
+    title: note?.title,
+    content: note?.content,
+  });
   const [formErrors, setFormErrors] = useState({
-    title: true,
-    content: true,
+    title: note?.title ? undefined : true,
+    content: note?.content ? undefined : true,
   });
 
   const updateFormValues = (e) => {
@@ -75,6 +77,7 @@ export const NoteForm = ({
         type="text"
         name="title"
         className="form-control"
+        value={formValues.title}
       />
       <FieldError msg={formErrors.title} />
     </div>
@@ -84,12 +87,13 @@ export const NoteForm = ({
       <label className="form-label" htmlFor="">
         Content
       </label>
-      <input
+      <textarea
         onChange={updateFormValues}
         type="text"
         name="content"
         className="form-control"
         row="5"
+        value={formValues.content}
       />
       <FieldError msg={formErrors.content} />
     </div>
