@@ -1,6 +1,7 @@
-import s from "./style.module.css";
 import { ButtonPrimary } from "components/ButtonPrimary/ButtonPrimary";
+import { Input } from "components/Input/Input";
 import { Link } from "react-router-dom";
+import s from "./style.module.css";
 
 export const Signin = () => {
   const form = (
@@ -9,9 +10,9 @@ export const Signin = () => {
         Signin <br />
         to access your team notes
       </h2>
-      <form action="" className={s.formGroup}>
-        <input type="text" />
-        <input type="text" />
+      <form className={s.formGroup}>
+        <Input placeholder={"Email"} />
+        <Input placeholder={"Password"} type="password" />
         <ButtonPrimary className={s.button}>Sign in!</ButtonPrimary>
         <span>
           Don't have an account yet ? <Link to={"/signup"}>Signup</Link>
