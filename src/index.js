@@ -11,6 +11,8 @@ import { Note } from "pages/Note/Note";
 import { NoteCreate } from "pages/NoteCreate/NoteCreate";
 import { PageNotFound } from "pages/PageNotFound/PageNotFound";
 import "./index.css";
+import { Signin } from "pages/Signin/Signin";
+import { Signup } from "pages/Signup/Signup";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -19,6 +21,8 @@ root.render(
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/" element={<App />}>
             <Route path="/" element={<NoteBrowse />} />
             <Route path="/note/:noteId" element={<Note />} />
