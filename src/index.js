@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.css";
 
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
@@ -10,17 +11,13 @@ import { NoteBrowse } from "pages/NoteBrowse/NoteBrowse";
 import { Note } from "pages/Note/Note";
 import { NoteCreate } from "pages/NoteCreate/NoteCreate";
 import { PageNotFound } from "pages/PageNotFound/PageNotFound";
-import "./index.css";
 import { Signin } from "pages/Signin/Signin";
 import { Signup } from "pages/Signup/Signup";
-import { FirebaseApp } from "services/firebase";
+import { FirebaseApp } from "utils/firebase";
 
 FirebaseApp.init();
 
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
-
 
 root.render(
   <StrictMode>

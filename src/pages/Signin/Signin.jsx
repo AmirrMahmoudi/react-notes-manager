@@ -1,21 +1,30 @@
+import { AuthAPI } from "api/auth";
 import { ButtonPrimary } from "components/ButtonPrimary/ButtonPrimary";
 import { Input } from "components/Input/Input";
-import { Link } from "react-router-dom";
-import s from "./style.module.css";
-import AuthLayout from "layouts/AuthLayout/AuthLayout";
+import { AuthLayout } from "layouts/AuthLayout/AuthLayout";
 import { useState } from "react";
-
-export const Signin = () => {
+import { Link, useNavigate } from "react-router-dom";
+import s from "./style.module.css";
+import { setUser } from "store/auth/auth-slice";
+import { useDispatch } from "react-redux";
+import { toast } from "utils/sweet-alert";
+export function Signin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const submit = (e) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const submit = async (e) => {
     e.preventDefault();
-    console.log("sumbited", email, password);
+    try {
+      const user = await AuthAPI.signin(email, password);
+      dispatch(setUser(user));
+      await toast("success", "Auth succeed");
+      navigate("/");
+    } catch (err) {
+      console.log("Auth failed");
+      toast("error", err);
+    }
   };
-
-  //   console.log("sign in email: ", email);
-  //   console.log("sign in password: ", password);
 
   const form = (
     <div className={s.formContainer}>
@@ -40,4 +49,4 @@ export const Signin = () => {
     </div>
   );
   return <AuthLayout>{form}</AuthLayout>;
-};
+}

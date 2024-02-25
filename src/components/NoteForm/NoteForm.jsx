@@ -3,7 +3,7 @@ import s from "./style.module.css";
 import { useState } from "react";
 import { PencilFill, TrashFill } from "react-bootstrap-icons";
 import { ButtonPrimary } from "components/ButtonPrimary/ButtonPrimary";
-import { ValidatorService } from "services/validator";
+import { ValidatorService } from "utils/validator";
 import { FieldError } from "components/FieldError/FieldError";
 
 const VALIDATOR = {

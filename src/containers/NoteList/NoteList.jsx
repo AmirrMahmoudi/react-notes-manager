@@ -21,13 +21,13 @@ export const NoteList = ({ noteList }) => {
     <div className="row justify-content-center">
       {noteList.map((note) => {
         return (
-          <div className={s.card_container}>
+          <div key={note.id} className={s.card_container}>
             <TextCard
               title={note.title}
               subtitle={note.created_at}
               content={note.content}
               onClickTrash={() => deleteNote_(note)}
-              onClick={() => navigate("/note/" + note.id)}
+              onClick={() => navigate("note/" + note.id)}
             />
           </div>
         );

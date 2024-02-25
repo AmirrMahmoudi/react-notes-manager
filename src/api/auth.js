@@ -1,12 +1,12 @@
-import { FirebaseApp } from "services/firebase";
+import { FirebaseApp } from "utils/firebase";
 import {
   signOut,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
 export class AuthAPI {
-  static async signIn(email, password) {
-    const response = await signInWithEmailAndPassword(
+    static async signin(email, password) {
+        const response = await signInWithEmailAndPassword(
       FirebaseApp.auth,
       email,
       password
