@@ -3,6 +3,7 @@ import { NoteForm } from "components/NoteForm/NoteForm";
 import { useDispatch } from "react-redux";
 import { addNote } from "store/notes/notes-slice";
 import { useNavigate } from "react-router-dom";
+import { withAuthRequired } from "hoc/withAuthRequired";
 export const NoteCreate = (props) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -22,3 +23,5 @@ export const NoteCreate = (props) => {
     </>
   );
 };
+
+export const ProtectedNoteCreate = withAuthRequired(NoteCreate);

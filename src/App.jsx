@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { setNoteList } from "store/notes/notes-slice";
 
 import s from "./style.module.css";
+import { withAuthRequired } from "hoc/withAuthRequired";
 
 export function App() {
   const dispatch = useDispatch();
@@ -26,3 +27,5 @@ export function App() {
     </div>
   );
 }
+
+export const ProtectedApp = withAuthRequired(App);
