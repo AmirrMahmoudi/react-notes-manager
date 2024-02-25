@@ -11,7 +11,7 @@ export function withAuthRequired(Component) {
       if (!user) {
         navigate("/signin");
       }
-    }, []);
+    }, [user]);
 
     return user && <Component />;
   };
