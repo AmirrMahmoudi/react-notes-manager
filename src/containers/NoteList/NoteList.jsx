@@ -1,4 +1,4 @@
-import { NoteAPI } from "api/note-api";
+import { NoteAPI } from "api/note";
 import { TextCard } from "components/TextCard/TextCard";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";

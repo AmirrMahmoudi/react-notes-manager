@@ -1,3 +1,16 @@
 {
-  "notes": []
+  "notes": [
+    {
+      "id": "9f64",
+      "title": "first",
+      "content": "test",
+      "created_at": "2/26/2024"
+    },
+    {
+      "id": "98f0",
+      "title": "second",
+      "content": "test-2",
+      "created_at": "2/26/2024"
+    }
+  ]
 }

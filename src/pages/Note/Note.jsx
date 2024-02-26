@@ -1,4 +1,4 @@
-import { NoteAPI } from "api/note-api";
+import { NoteAPI } from "api/note";
 import { NoteForm } from "components/NoteForm/NoteForm";
 import { withAuthRequired } from "hoc/withAuthRequired";
 import { useState } from "react";

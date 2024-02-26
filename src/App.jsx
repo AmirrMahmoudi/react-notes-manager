@@ -1,4 +1,4 @@
-import { NoteAPI } from "api/note-api";
+import { NoteAPI } from "api/note";
 import { Header } from "components/Header/Header";
 import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
