@@ -12,12 +12,15 @@ import s from "./style.module.css";
 export function App() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  async function fetchAllNotes() {
+  async function fetchNotes() {
     const noteList = await NoteAPI.fetchAll();
     dispatch(setNoteList(noteList));
   }
   useEffect(() => {
-    fetchAllNotes();
+    const unsub = NoteAPI.onShouldSyncNotes(fetchNotes);
+    return () => {
+      unsub();
+    };
   }, []);
 
   return (
