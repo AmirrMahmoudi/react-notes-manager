@@ -22,7 +22,7 @@ export function Signin() {
       navigate("/");
     } catch (err) {
       console.log("Auth failed");
-      toast("error", err);
+      toast("error", err.message);
     }
   };
 
